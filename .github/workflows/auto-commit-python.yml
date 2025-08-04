@@ -25,12 +25,10 @@ jobs:
       - name: Modify last update in Python file
         run: |
           d=$(date '+%Y-%m-%dT%H:%M:%SZ')
-          cat > last_updated.py << 'EOL'
-LAST_UPDATED = '$d'
-
-def print_timestamp():
-    print(f"Last updated: {LAST_UPDATED}")
-EOL
+          echo "LAST_UPDATED = '$d'" > last_updated.py
+          echo "" >> last_updated.py
+          echo "def print_timestamp():" >> last_updated.py
+          echo "    print(f\"Last updated: {LAST_UPDATED}\")" >> last_updated.py
       - name: Commit changes
         run: |
           git config --local user.email "thienbao000011@gmail.com"
