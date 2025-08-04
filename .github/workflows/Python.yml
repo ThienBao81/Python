@@ -1,3 +1,4 @@
+```yaml
 name: Auto commit Python
 
 on:
@@ -53,3 +54,4 @@ EOL
         with:
           directory: "."
           github_token: ${{ secrets.GITHUB_TOKEN }}
+```
